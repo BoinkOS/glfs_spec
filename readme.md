@@ -2,9 +2,9 @@
 ***g**ood **l**uck **f**ile **s**ystem, version 0*
 
 
-## GLFS Structure
+## GLFS Structure Overview
 ```
-[sector 0] GLFS  SUPERBLOCK
+[sector 0] GLFS SUPERBLOCK
 ----------
 - magic GLFS+version identifier
 
@@ -19,10 +19,23 @@
 	       size: int (bytes)
      (...)
      
-     [end of table marker]
-
+[end of table marker]
+----------
 [file data]
 (...)
-
+----------
 [end of disk marker]
 ```
+
+### `[0]` Superblock Overview
+- size: 512b
+- contents:
+     - bytes 0..7: `GLFSv0\n` (7 bytes+newline)
+     - bytes 7..511: _reserved_
+
+### `[sector 1+]` Directory Table Overview
+- each 40-byte directory entry contains:
+     - 32 byte filename
+     - 4 byte (uint32) start sector (offset from sector 0)
+     - 4 byte (uint32) file size in bytes
+- end of table is marked with `b'__END__'` (8 bytes) 
