@@ -23,8 +23,6 @@
 ----------
 [file data]
 (...)
-----------
-[end of disk marker]
 ```
 
 ### `[0]` Superblock Overview
