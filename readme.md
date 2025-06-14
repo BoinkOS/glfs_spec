@@ -1,6 +1,7 @@
 # GLFS Spec (v0)
-***g**ood **l**uck **f**ile **s**ystem, version 0*
+_**g**ood **l**ittle **f**ile **s**ystem, version 0_
 
+(affectionately _**g**ood **l**uck **f**ile **s**ystem, version 0_)
 
 ## GLFS Structure Overview
 ```
